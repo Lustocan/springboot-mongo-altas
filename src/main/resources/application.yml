@@ -1,0 +1,14 @@
+server:
+  ssl:
+    key-alias: spring-https
+    key-store: classpath:javatech.jks
+    key-store-type: JKS
+    key-password: gianniepinotto
+
+  port: 7777
+
+spring:
+  data:
+    mongodb:
+      uri : mongodb+srv://lustocan:lustocan@cluster0.moozrf8.mongodb.net/?retryWrites=true&w=majority
+      database : GeoFun
