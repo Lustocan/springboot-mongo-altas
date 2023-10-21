@@ -37,8 +37,8 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         return http.csrf(csfr -> csfr.disable())
                 .authorizeHttpRequests((auth) -> auth
-                .requestMatchers("/users","/sign_up","/auth").permitAll()
-                .requestMatchers(/*"/users/**",*/ "/welcome").authenticated())
+                .requestMatchers("/sign_up","/auth").permitAll()
+                .requestMatchers("/users/**", "/welcome").authenticated())
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider())
                 .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
