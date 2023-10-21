@@ -70,6 +70,12 @@ public class AuthService {
         return repository.save(user);
     }*/
     public User sign_up(User user){
+        if((user.getRole() ==null)||(user.getEmail()==null
+                ||user.getPassword()==null)
+                ||user.getUsername()==null)  return null ;
+        else if(repository.findByEmail(user.getEmail())!=null) {
+            return null ;
+        }
         user.setUserId(UUID.randomUUID().toString().split("-")[0]);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return repository.save(user);
