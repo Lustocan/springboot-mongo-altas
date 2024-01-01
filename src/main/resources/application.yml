@@ -1,12 +1,6 @@
 server:
-  #ssl:
- #   key-alias: spring-https
-  #  key-store: classpath:javatech.jks
-   # key-store-type: JKS
-    #key-password: gianniepinotto
-
   port: 7777
-
+  address: 0.0.0.0
 spring:
   data:
     mongodb:

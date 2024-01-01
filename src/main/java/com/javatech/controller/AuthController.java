@@ -33,7 +33,7 @@ public class AuthController {
     @Autowired
     private PasswordEncoder passwordEncoder ;
 
-    @PreAuthorize("hasAuthority('ADMIN')")
+    //@PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/welcome")
     public String welcomePage(){
         return "Welcome in this page" ;
