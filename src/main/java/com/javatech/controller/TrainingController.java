@@ -28,4 +28,9 @@ public class TrainingController {
         if(cur==null) return null ;
         return new ResponseEntity<>(cur, HttpStatus.OK);
     }
+
+    @DeleteMapping("/{trId}")
+    public ResponseEntity<String> deleteUser(@PathVariable String trId){
+        return new ResponseEntity<>(service.deleteTr(trId), HttpStatus.OK);
+    }
 }

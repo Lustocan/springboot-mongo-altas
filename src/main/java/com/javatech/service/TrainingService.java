@@ -29,7 +29,13 @@ public class TrainingService {
     }
 
     public Training createTr(Training training){
-        training.setTrId(UUID.randomUUID().toString().split("-")[0]);
+        training.setId(UUID.randomUUID().toString().split("-")[0]);
         return repository.save(training);
+    }
+
+    public String deleteTr(String id){
+        if(id==null) return null ;
+        repository.deleteById(id);
+        return id+" task deleted from training_list" ;
     }
 }

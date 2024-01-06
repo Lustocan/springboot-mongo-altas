@@ -14,7 +14,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class Training {
     @Id
-    private String trId         ;
+    private String id         ;
     private String username       ;
     private String time      ;
     private String kilometers   ;
